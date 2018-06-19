@@ -1,0 +1,38 @@
+(1)
+
+A. 200 Clients * 100 B = 20,000 B = 20 KB
+   File descriptors remain open when children terminate, so fd table each fd
+   maps to an open file descriptor (200 remain open)
+
+B. 0 KB, Refcnt is 0 when child terminates, so the connfd deletes
+
+(2)
+
+A. 
+
+cnt.t0:
+No, Yes, No
+
+cnt.t1:
+No, No, Yes
+
+i.m:
+Yes, No, No
+
+msgs.m:
+Yes, Yes, Yes
+
+myid.t0:
+No, Yes, No
+
+myid.t1:
+No, No, Yes
+
+(3)
+
+A. T1: AB, AC, AD
+   T2: DC, DB, CD
+
+B. No overlap, therefore no overlap order as well
+
+C. No Potential for deadlock

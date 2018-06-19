@@ -1,0 +1,22 @@
+yasoobr hw8 grade: 34/40
+
+Graded files from svn revision 66
+
+--------------------------------------
+Question 1 points and comments: 20/20
+Good job! 
+
+Graded by: Katrina Lee (klee97)
+--------------------------------------
+
+Question 2 points and comments: 14/20
+(-6) A: The base for segment 1 is 0x36, while the base for segment 0 is 0xA8
+(you have them switched). This means the physical addresses should be
+0x9B, 0xF2, and 0xDF respectively.
+
+Graded by: Annie Xu (anniexu)
+--------------------------------------
+
+If you believe there is an error in how you were graded, you have a week,
+starting from when this grade was returned, to notify us.
+Notify us by carefully filling out this form: https://docs.google.com/spreadsheets/d/1C2MnIsCWXo-OaHd3Y07I1yskGdTbSc1xlbCxsKhJseQ/edit?usp=sharing

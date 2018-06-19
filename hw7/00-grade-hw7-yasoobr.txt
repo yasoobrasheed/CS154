@@ -1,0 +1,26 @@
+yasoobr hw7 grade: 30/35
+
+Graded files from svn revision 62
+
+--------------------------------------
+Question 1 points and comments: 15/15
+  Not sure what's up with the second system call there.
+
+Graded by: Mihai Andreescu (mandreescu)
+--------------------------------------
+
+Question 2 points and comments: 15/20
+(-2) C: You should be more specific about what causes this output instead of
+the other outputs. In this case, the child's signal handler executed before
+the child's first print statement in line 20.
+(-3) D: It is not true that the parent thinks the child has terminated; 
+rather, the child signals the parent before the value of fork() is assigned
+to forkret in the parent process. This is why forkret remains 0 during the
+parent's signal handler.
+
+Graded by: Annie Xu (anniexu)
+--------------------------------------
+
+If you believe there is an error in how you were graded, you have a week,
+starting from when this grade was returned, to notify us.
+Notify us by carefully filling out this form: https://docs.google.com/spreadsheets/d/1C2MnIsCWXo-OaHd3Y07I1yskGdTbSc1xlbCxsKhJseQ/edit?usp=sharing

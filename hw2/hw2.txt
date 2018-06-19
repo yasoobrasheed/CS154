@@ -1,0 +1,75 @@
+Homework 2
+
+(1)
+
+A.  Operand: (%ecx)
+    Value: 0x09
+    Mode: Indirect
+
+B. Operand: 0x12(%eax) 
+    Value: unknown
+    Mode: The memory at 0x222 exists but it is not one we are given and, thus,
+          is unknown. Mode is Base + Displacement.
+
+C.  Operand: 548
+    Value: 0x54
+    Mode: Absolute
+
+E.  Operand: (%eax, %esi)
+    Value: 0xBC
+    Mode: Indexed
+
+F.  Operand: 0x100(%edi, %edx, 0x30)
+    Value: 0x42
+    Mode: Scaled Indexed
+
+H.  Operand: $251
+    Value: 0xFB
+    Mode: Immediate
+
+I.  Operand: (, %esi, 0x88)
+    Value: 0x42
+    Mode: Scaled Indexed
+
+(2)
+
+
+A.  Instruction: inc1 %esi
+    Destination: %esi
+    Value: 0x5
+
+B.  Instruction: xorl %ebx, %ebx
+    Destination: %ebx
+    Value: 0x0
+
+C.  Instruction: decl (%eax)
+    Destination: 0x210
+    Value: 0xAA
+
+D.  Instruction: subl 0x21C, %edi
+    Destination: %edi
+    Value: 0xFEE4
+
+E.  Instruction: notl %edx
+    Destination: %edx
+    Value: 0xFFFFFFFE
+
+F.  Instruction: shll %esi, (%ecx)
+    Destination: 0x21C
+    Value: 0x90
+
+G.  Instruction: subl $0x100, %exc
+    Destination: %ecx
+    Value: 0x11C
+
+H.  Instruction: imull %edi, (%eax, %esi))
+    Destination: 0x214
+    Value: 0xBC00
+
+I.  Instruction: orl (%ecx), %eax
+    Destination: %eax
+    Value: 0x219
+
+J.  Instruction: shrl %esi, (%edi, %esi, 72)
+    Destination: 0x220
+    Value: 0x22

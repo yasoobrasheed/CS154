@@ -1,0 +1,44 @@
+(1)
+
+Physical Addresses: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+Processes P1, P2, P3 require only 1MB, 2MB, 3MB respectively
+To Run a Process OS, needs a contiguous span of 3MB
+
+1MB at adress 4 in use
+0 1 2 3 4 5 6 7 8 9
+F F F F X F F F F F
+
+A. There is room for P1 in Addresses 0-2. 
+
+1MB at adress 4 in use
+0 1 2 3 4 5 6 7 8 9
+1 1 1 F X F F F F F
+
+B. There is room for P2 in Addresses 5-7.
+
+1MB at adress 4 in use
+0 1 2 3 4 5 6 7 8 9
+1 1 1 F X 2 2 2 F F
+
+C. There is no room for P3, because to run process 3, the OS needs a contiguous span of 3MB
+
+D. Internal Fragmentation: 
+   P1: 2MB (Process 1 takes 1 MB, but 3 are allocated contiguously by OS)
+   P2: 1MB (Process 2 takes 2 MB, but 3 are allocated contiguously by OS)
+   P3: N/A (Process 3 was not allocated by OS)
+   Total: 3MB
+E. External Fragmentation: 3MB (3 addresses are free (F))
+
+(2)
+
+A.
+
+R 0xE5 = 1 | 1100101; 0xA8 + 0x65 = 0x10D (Success)
+
+W 0x4A = 0 | 1001010; 0x36 + 0x4A = 0x80 (Failure)
+
+R 0x37 = 0 | 0110111; 0x36 + 0x37 = 0x6D (Success)
+
+B.
+
+Largest Size of a Segment = 2^7 bytes

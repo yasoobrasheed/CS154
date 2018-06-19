@@ -1,0 +1,41 @@
+(1)
+
+A. ttttttttssbb
+
+B. 
+    a. Hit, 0xD0
+    b. Hit, 0x4A
+    c. Hit, 0x46
+    d. Hit, 0x03
+    e. Miss, unknown
+    f. Hit, N/A
+    g. Hit, N/A
+    h. Miss, unknown
+    i. Hit, 0x03
+
+(2)
+
+A. After every cold miss for adding x[0][i] to the cache, there is a conflict 
+   miss in the line, for adding x[1][i] to the cache. Thus the miss rate = 100%.
+
+B. With a cache size of 1024, the only thing that changes is the set bit, so
+   only the first cold miss is accounted for in the block offset. The miss rate
+   is 25%.
+
+C. With a two way set associative cache the bit offset remains the same but
+   there are now 2 slots at every set, so the first x and y are cold misses but
+   the next three are hits. Miss rate is 25%.
+
+D. No, the number of blocks in a set remain the same when you increase the
+   cache size, so there will still be the same number of cold misses.
+
+E. Yes, a larger block size would help to reduce the miss rate because more
+   elements would be able to fit into each set, so you'll be able to make more
+   hits before the set index changes.
+
+(3)
+
+A. Latency = ((1 - R) * M * (FLD + FST)) + (R * H * (FLD + FST)) + (LBJ * FBJ) + (LAL * (1 - FBJ - FLD - FST))
+
+B. Latency = ((1 - 0.6) * 120 * (0.22 + 0.12)) + (0.6 * 1 * (0.22 + 0.12)) + (3.0 * 0.2) + (1.1 * (1 - 0.20 - 0.22 - 0.12))
+           = 18 cycles

@@ -1,0 +1,103 @@
+(1)
+
+    .text
+    .globl readin
+
+readin:
+    pushl %ebp
+    movl %esp, %ebp
+    pushl %ebx
+    
+    movl $3, %eax       // System call number 3
+    movl $0, %ebx       // stdin has descriptor 0        
+    movl 8(%ebp) %ecx   // *buff
+    movl 12(%ebp) %edx  // len
+    int $0x80           // System call code
+    
+    movl $1, %eax       // System call number 0
+    movl $0, %ebx       // Argument is 0
+    int $0x80           // System call code
+
+    pop %ebx
+    pop %ebp
+    ret
+
+(2)
+
+A.
+
+Line Analysis
+-------------
+1 P 16 0
+2 P 24 101
+3 C 20 0
+4 P 8 101
+5 C 8 0
+6 C 10 0
+7 P 27 101
+
+B.
+
+Line Analysis
+-------------
+1 P 16 0
+2 P 24 101
+3 C 20 0
+4 C 8 0
+5 C 10 0
+6 P 27 101
+
+Race Condition
+--------------
+PARENT executes fork()
+PARENT executes printf()
+CHILD executes printf()
+Kernel schedules CHILD to run instead of PARENT (race condition begins)
+CHILD terminates and becomes a zombie
+Kernel delivers SIGUSR1 signal to PARENT
+PARENT runs SIGUSR1 of CHILD in its handler
+Handler reaps terminated CHILD, doing nothing
+Kernel runs PARENT's final printf()
+
+C.
+
+Line Analysis
+-------------
+1 P 16 0
+2 P 24 101
+3 C 8 0
+4 C 10 0
+5 P 27 101
+
+Race Condition
+--------------
+PARENT executes fork()
+PARENT executes printf()
+Kernel schedules PARENT to run instead of CHILD (race condition begins)
+PARENT executes kill signal in its handler
+Kernel delivers SIGUSR1 signal to CHILD
+CHILD runs SIGUSR1 in its handler instead of PARENT
+CHILD executes both printf() statements and calls exit(0)
+CHILD process terminates
+PARENT executes final prinf()
+
+D.
+
+Line Analysis
+-------------
+1 P 16 0
+2 C 20 0
+3 P 8 0
+4 P 10 0
+
+Race Condition
+--------------
+PARENT executes fork()
+PARENT thinks CHILD is terminated as the value of forkret remains 0
+=> Kernel schedules CHILD to run instead of PARENT 
+CHILD executes printf()
+Kernel delivers SIGUSR1 signal to PARENT
+PARENT runs SIGUSR1 in its handler instead of CHILD
+PARENT runs handler1() with forkret = 0
+PARENT executes printf() of handler1()
+PARENT executes exit(0), exiting the process

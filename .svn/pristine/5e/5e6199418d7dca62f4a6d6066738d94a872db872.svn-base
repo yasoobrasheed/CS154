@@ -1,0 +1,71 @@
+
+Homework #3
+
+(1)
+
+int funcQ (int x, int y) {  
+    y = y * 3;
+    x = x + y;
+    return x;
+}
+
+int funcP (int r, int s, int t) {
+    if (s <= 0) {
+        t = t + funcQ(s, r);
+        return t;
+    } else {
+        r = r + funcQ(t, s);
+        return r;
+    }
+}
+
+(2)
+
+A.  x: %esi
+    n: %ecx
+    result: %eax
+    mask: %edx
+
+B.  result = 0
+    mask = 3
+
+C.  Check that mask does not equal zero
+
+D.  mask gets updated by being shifted left n bits
+
+E.  result gets updated by using the bitwise operation between
+    result and the bitwise and operation used on x 
+
+F.
+
+int loop(int x, int n) {
+    int result = 0;
+    int mark;
+    for (mask = 3; mask != 0; mask << n) {
+        result = result | (mask & x);
+    }
+    return result;
+}
+
+(3)
+
+A.  &A[i][j][k] = x_A + L(i * S * T + j * T + k)
+
+B.  
+
+line 3: gives us %eax = j
+line 4: gives us %edx = 9j
+line 5: gives us %eax = 90i
+line 6: gives us %eax = 90i + 9j
+line 7: gives us %eax = 90i + 9j + k
+line 8: gives us %edx = A + 4[90i + 9j + k]
+Now this looks a lot like the equation we found in part A
+line 9 & 10: gives us dest = A + 4[90i + 9j + k] where A functions as x_A
+Using the equation we had above we get two equations:
+S * T = 90
+T = 9
+So, now we have T = 9, and S = 10
+line 11: gives us the size of the array = 1440 / 4 = 360 elements
+And we know R * S * T = 360
+90 * R = 360,
+So, R = 4, S = 10, T = 9

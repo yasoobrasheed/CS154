@@ -1,0 +1,49 @@
+(1)
+
+A. System calls are executed in kernel mode, while library calls are executed in
+   the user space. System calls are executed through general purpose registers
+   rather than the stack.
+
+B. System calls are in manual section 2, library functions are in section 3, as
+   evident in the parenthesized number after the call/function name in the first
+   line of the man page, e.g.
+   OPEN(2) in first line of `man 2 open'' vs 
+   FOPEN(3) in first line of `man fopen'' or ``man 3 fopen'
+
+C. System Calls
+
+   brk - upper limit or end of this data segment
+   fork - creates a new process, child of caller, both will execute
+   lseek - change the location of a read write operation
+   pause - sleep process until specific signal is delivered
+
+   Library Calls
+
+   dlopen - opens library and prepares it for use (i.e. loading plugins)
+   fclose - closes an open file stream
+   malloc - allocate bytes on heap and return pointer to memory
+   sprint - store string on buffer for output
+
+(2)
+
+A. Exception Number, Exception Handler
+   0, 0xC0005000
+
+B. // %ebx = 0
+
+   idivl %ebx
+
+   // Exception is noticed and moves to the OS code (user mode -> kernel mode).
+   // Divide by zero handler at 0xC0005000 is waiting to be called
+   // In the CPU, ALU fetches exception
+
+   if (%ebx == 0) {
+       fetch exc[0]
+   }
+
+   // Goes into exception table at exc[0] finds 0xC0005000
+   // Sets %eip to the the exception address
+
+   %eip = 0xC0005000
+
+   // Now the CPU knows to execute DivideByZeroError()

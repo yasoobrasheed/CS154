@@ -1,0 +1,42 @@
+yasoobr cs154 grade: 82.139 (normalized: 82.139 )
+
+Homeworks:
+       hw1 (2.75%):     20/22 == 2.4999
+       hw2 (2.75%):     31/34 == 2.5073
+       hw3 (2.75%):     32/32 == 2.7500
+       hw4 (2.75%):     54/55 == 2.6999
+       hw5 (2.75%):     20/20 == 2.7500
+       hw6 (2.75%):     34/35 == 2.6714
+       hw7 (2.75%):     30/35 == 2.3571
+       hw8 (2.75%):     34/40 == 2.3375
+       hw9 (2.75%):     47/49 == 2.6377
+                     -------------------
+                 raw hw sum   == 23.211
+        (dropping lowest: hw8 == 2.3375)
+    hw avg   (22%):           == 20.873
+
+Projects:
+p1bitmanip  (6.6%):    66/103 == 4.2291
+    p2bomb  (6.6%):     63/60 == 6.9300
+   p3cache  (6.6%):  97.1/100 == 6.4086
+   p4shell  (6.6%):    94/100 == 6.2040
+  p5malloc  (6.6%):    84/100 == 5.5440
+
+Exams:
+     exam1   (20%):    71/100 == 14.200
+     exam2   (25%):    71/100 == 17.750
+
+(Current weighted score, based on 100.0% of assignments)
+   OVERALL (100.0%):           == 82.139
+
+(Current normalized score, 100/100.0 * currentOverall)
+NORMALIZED  (100%):           == 82.139
+
+
+
+
+The OVERALL score is the total score you've earned.  The NORMALIZED
+score is the score as if the quarter ends today (normalized to 100%
+work done). At the end of the quarter, the OVERALL score will be the
+same as the NORMALIZED score.
+

@@ -1,0 +1,26 @@
+yasoobr hw4 grade: 54/55
+
+Graded files from svn revision 33
+
+--------------------------------------
+Question 1 points and comments: 19/20
+Good job! Note that the second "Read 0xFFE" is a miss because the line we wanted was evicted. 
+
+Graded by: Katrina Lee (klee97)
+--------------------------------------
+
+Question 2 points and comments: 20/20
+Well done! 
+
+Graded by: Annie Xu (anniexu)
+--------------------------------------
+
+Question 3 points and comments: 15/15
+Well done! 
+
+Graded by: Annie Xu (anniexu)
+--------------------------------------
+
+If you believe there is an error in how you were graded, you have a week,
+starting from when this grade was returned, to notify us.
+Notify us by carefully filling out this form: https://docs.google.com/spreadsheets/d/1C2MnIsCWXo-OaHd3Y07I1yskGdTbSc1xlbCxsKhJseQ/edit?usp=sharing

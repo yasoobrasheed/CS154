@@ -1,0 +1,26 @@
+yasoobr hw2 grade: 31/34
+
+Graded files from svn revision 18
+
+--------------------------------------
+Question 1 points and comments: 13/14
+(-1) B: Since you know the 4-byte values located at 0x220 and 0x224,
+you could determine what value was at 0x222 - if the endianness of storage
+was known. The unspecified endianness is what makes this value unknown.
+
+Graded by: Annie Xu (anniexu)
+--------------------------------------
+
+Question 2 points and comments: 18/20
+(-1) D: The correct value is 
+0x100 (value stored at %edi) - 0x09 (value stored at 0x21C) = 0xF7.
+(-1) J: You should be right-shifting the value stored at the address 0x220,
+which is 0x42, rather than the value 0x220 itself. This would result in 
+correct value of 0x4.
+
+Graded by: Annie Xu (anniexu)
+--------------------------------------
+
+If you believe there is an error in how you were graded, you have a week,
+starting from when this grade was returned, to notify us.
+Notify us by carefully filling out this form: https://docs.google.com/spreadsheets/d/1C2MnIsCWXo-OaHd3Y07I1yskGdTbSc1xlbCxsKhJseQ/edit?usp=sharing

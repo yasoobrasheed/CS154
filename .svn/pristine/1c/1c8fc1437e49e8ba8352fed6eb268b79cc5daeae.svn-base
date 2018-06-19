@@ -1,0 +1,100 @@
+yasoobr p1bitmanip grade: 66/103 
+ 
+https://phoenixforge.cs.uchicago.edu/svn/yasoobr-cs154-spr-18/p1bitmanip 
+Grading revision: 16 
+
+Comments: The project instructions state that your code will be evaluated using the dlc compiler.  
+	    	dlc is automatically run as part of the driver.pl script, which was distributed to you.  
+	    	Section 8 of the assignment describes the requirements for passing dlc compilation.
+	    	The instructions indicated that the output of the driver.pl script would be your grade.
+	    	The output of driver.pl applied to your code was an error.  This error has been converted to a grade of 0. 
+
+$ make
+gcc -O -Wall -lm -o btest bits.c btest.c decl.c tests.c
+gcc -O -Wall -o ishow ishow.c
+
+$ ./driver.pl
+1. Running './dlc -z' to identify coding rules violations.
+/usr/include/stdc-predef.h:1: Warning: Non-includable file <command-line> included from includable file /usr/include/stdc-predef.h.
+bits.c:259: parse error
+bits.c:259: declaration without a variable
+bits.c:258: Warning: unused variable `sign_x_3'
+bits.c:403: parse error
+bits.c:421: parse error
+bits.c:421: declaration without a variable
+bits.c:423: undeclared variable `subtract_flag'
+
+Compilation Failed: 6 errors, 2 warnings
+dlc:bits.c:466:rotateLeft: Illegal operator (-)
+dlc:bits.c:468:rotateLeft: Illegal operator (-)
+dlc:bits.c:471:rotateLeft: Zapping function body!
+./driver.pl: ERROR: zapped bits.c did not compile. The files are in /var/tmp/datalab.mwachs.18936.
+
+Final Grade: zapped
+
+After manual fixes to compilation by instructor:
+
+1. Running './dlc -z' to identify coding rules violations.
+/usr/include/stdc-predef.h:1: Warning: Non-includable file <command-line> included from includable file /usr/include/stdc-predef.h.
+dlc:bits.c:447:rotateLeft: Illegal operator (-)
+dlc:bits.c:449:rotateLeft: Illegal operator (-)
+dlc:bits.c:452:rotateLeft: Zapping function body!
+
+Compilation Successful (1 warning)
+
+2. Compiling and running './btest -g' to determine correctness score.
+gcc -O -Wall -lm -o btest bits.c btest.c decl.c tests.c 
+bits.c: In function ‘rotateLeft’:
+bits.c:450:9: warning: unused variable ‘remove_leading_ones’ [-Wunused-variable]
+
+3. Running './dlc -Z' to identify operator count violations.
+/usr/include/stdc-predef.h:1: Warning: Non-includable file <command-line> included from includable file /usr/include/stdc-predef.h.
+dlc:save-bits.c:447:rotateLeft: Illegal operator (-)
+dlc:save-bits.c:449:rotateLeft: Illegal operator (-)
+dlc:save-bits.c:452:rotateLeft: Zapping function body!
+
+Compilation Successful (1 warning)
+
+4. Compiling and running './btest -g -r 2' to determine performance score.
+gcc -O -Wall -lm -o btest bits.c btest.c decl.c tests.c 
+save-bits.c: In function ‘rotateLeft’:
+save-bits.c:450:9: warning: unused variable ‘remove_leading_ones’ [-Wunused-variable]
+     int remove_leading_ones = last_n & end_mask;
+         ^
+
+
+5. Running './dlc -e' to get operator count of each function.
+
+Correctness Results	Perf Results
+Points	Rating	Errors	Points	Ops	Puzzle
+4	4	0	2	3	absVal
+3	3	0	2	11	addOK
+2	2	0	2	7	allEvenBits
+4	4	0	2	5	bang
+0	4	1	0	0	bitCount
+1	1	0	2	3	bitNor
+2	2	0	2	11	byteSwap
+3	3	0	2	8	conditional
+0	3	1	0	0	ezThreeFourths
+2	2	0	2	6	fitsBits
+2	2	0	2	3	getByte
+4	4	0	2	15	greatestBitPos
+2	2	0	2	3	implication
+3	3	0	2	8	isAsciiDigit
+2	2	0	2	2	isEqual
+3	3	0	2	14	isLess
+0	3	1	0	0	isNonNegative
+0	4	1	0	0	isPower2
+1	1	0	2	5	isTmin
+1	1	0	2	2	minusOne
+0	3	1	0	9	rotateLeft
+3	3	0	2	11	satMul2
+
+Score = 76/103 [42/59 Corr + 34/44 Perf] (126 total operators)
+
+Penalty for submitting non-compiling code: Lose points again for non-compliant functions
+ezThreeFourths -3
+isNonNegative -3
+isPower2 -4
+
+==> 66 / 103

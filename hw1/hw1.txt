@@ -1,0 +1,42 @@
+(1)
+
+foo = 4026531840;
+endian = *((char*)&foo);
+
+Why does this code work?
+
+The variable foo in binary is 11110000 00000000 00000000 00000000. 
+In little endian the last byte is stored first, so foo would be stored as
+00000000 00000000 00000000 11110000. I casted the integer endian to a char so that
+its pointer would point to the first of the 4 bytes allocated to it. When dereferenced,
+this would point to the binary number 00000000, which equals 0. Thus, the if
+statement will prove false and return that my system is, in fact, little endian.
+But if the system was big endian, the pointer would dereference to 
+11110000 and the if statement would prove true.
+
+(2)
+
+A. At least one bit of x is 0
+
+return ~x;
+
+B. At least one bit of x is 1
+
+return x;
+
+C. Any of the bits in the most significant nibble of x is 0
+
+return (x >> ((sizeof(int) << 3) - 4) & 0xF) ^ 0xF; 
+
+D. Any of the bits in the least significant nibble of x is 1
+
+return x << ((sizeof(int) << 3) - 4);
+
+E. The most significant and least significant byte are equal
+
+return (x << ((sizeof(int) << 3) - 8)) == 
+       ((x >> ((sizeof(int) << 3) - 8) & 0xFF) << ((sizeof(int) << 3) - 8)); 
+
+F. Any even bit of x is 1; the least-significant bit is an even bit
+
+return x & 0b01010101010101010101010101010101;

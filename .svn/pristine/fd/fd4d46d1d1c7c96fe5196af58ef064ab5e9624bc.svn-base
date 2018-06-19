@@ -1,0 +1,22 @@
+yasoobr hw6 grade: 34/35
+
+Graded files from svn revision 49
+
+--------------------------------------
+Question 1 points and comments: 20/20
+
+Graded by: Mihai Andreescu (mandreescu)
+--------------------------------------
+
+Question 2 points and comments: 14/15
+Great work!
+(-1) B: Since the question says to include the specific addresses that are given,
+you should mention that the CPU begins by executing the instruction located
+at 0x08001000.
+
+Graded by: Annie Xu (anniexu)
+--------------------------------------
+
+If you believe there is an error in how you were graded, you have a week,
+starting from when this grade was returned, to notify us.
+Notify us by carefully filling out this form: https://docs.google.com/spreadsheets/d/1C2MnIsCWXo-OaHd3Y07I1yskGdTbSc1xlbCxsKhJseQ/edit?usp=sharing

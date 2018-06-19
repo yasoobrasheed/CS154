@@ -1,0 +1,26 @@
+yasoobr hw9 grade: 47/49
+
+Graded files from svn revision 84
+
+--------------------------------------
+Question 1 points and comments: 16/16
+Good job! 
+
+Graded by: Katrina Lee (klee97)
+--------------------------------------
+
+Question 2 points and comments: 16/18
+  [-1]: i.m is referenced by thread 0.
+  [-1]: i.m is referenced by thread 1.
+
+Graded by: Mihai Andreescu (mandreescu)
+--------------------------------------
+
+Question 3 points and comments: 15/15
+
+Graded by: Maxim Lisnic (lisnic)
+--------------------------------------
+
+If you believe there is an error in how you were graded, you have a week,
+starting from when this grade was returned, to notify us.
+Notify us by carefully filling out this form: https://docs.google.com/spreadsheets/d/1C2MnIsCWXo-OaHd3Y07I1yskGdTbSc1xlbCxsKhJseQ/edit?usp=sharing

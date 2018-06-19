@@ -1,0 +1,26 @@
+(1)
+
+A. On line 4 of the assembly code, the register %esi is dereferenced and stored
+   into %eax. This corresponds to line 4 of the C code where the pointer pb is 
+   dereferenced
+
+B. If *pb was an alias for arr, then if it was the same as a given element
+   in the array, when the array accesses the same index that *pb is an alias
+   for, *pb will become 2 * (*pb) and then the next elements of the arr will be adding 
+   2 * (*pb) to themselves. 
+   
+   If *pb was taken out of the for loop, then when it is dereferenced it
+   contains a value that remains constant in the variable it is stored. This
+   would result in a different solution than the aliasing one above.
+
+C. This is called Memory Aliasing
+
+D. Change the parameters of the addto function. Swap the (int *pb) out for a
+   (int pb). No dereferencing done on the incrementor.
+
+   void addto(int *arr, int pb, int n) {
+      int i;
+      for (i = 0; i < n; i++) {
+          arr[i] += pb;
+      }
+   }

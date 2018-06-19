@@ -1,0 +1,21 @@
+yasoobr hw1 grade: 20/22
+
+Graded files from svn revision 10
+
+--------------------------------------
+Question 1 points and comments: 10/10
+Good job! 
+
+Graded by: Katrina Lee (klee97)
+--------------------------------------
+
+Question 2 points and comments: 10/12
+(-2) Each expression should evaluate to exactly 1 if true, and 0 if false.
+To reduce your non-zero results to 1, you can use !!, which will make non-zero 
+numbers into 1 and leave 0 as 0. 
+Graded by: Annie Xu (anniexu)
+--------------------------------------
+
+If you believe there is an error in how you were graded, you have a week,
+starting from when this grade was returned, to notify us.
+Notify us by carefully filling out this form: https://docs.google.com/spreadsheets/d/1C2MnIsCWXo-OaHd3Y07I1yskGdTbSc1xlbCxsKhJseQ/edit?usp=sharing

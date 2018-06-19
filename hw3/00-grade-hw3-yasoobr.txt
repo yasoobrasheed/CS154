@@ -1,0 +1,24 @@
+yasoobr hw3 grade: 32/32
+
+Graded files from svn revision 31
+
+--------------------------------------
+Question 1 points and comments: 10/10
+Good job! 
+
+Graded by: Katrina Lee (klee97)
+--------------------------------------
+
+Question 2 points and comments: 12/12
+
+Graded by: Mihai Andreescu (mandreescu)
+--------------------------------------
+
+Question 3 points and comments: 10/10
+
+Graded by: Maxim Lisnic (lisnic)
+--------------------------------------
+
+If you believe there is an error in how you were graded, you have a week,
+starting from when this grade was returned, to notify us.
+Notify us by carefully filling out this form: https://docs.google.com/spreadsheets/d/1C2MnIsCWXo-OaHd3Y07I1yskGdTbSc1xlbCxsKhJseQ/edit?usp=sharing
